@@ -24,42 +24,28 @@ body {
   <tr>
     <td valign="middle" background="../Public/Images/mail_leftbg.gif">&nbsp;</td>
     <td valign="top" bgcolor="#F7F8F9">
-        
+        <!--content start-->
         <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
-      <tr>
-        <td colspan="2" valign="top">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td valign="top">&nbsp;</td>
-      </tr>
+            <tr>
+              <td>ID</td>
+              <td>名称</td>
+              <td>名称</td>
+              <td>状态</td>
+              <td>操作</td>
+            </tr>
+            <volist name="list" id="vo">
+            <tr>
+              <td>{$vo.id}</td>
+              <td>{$vo.name}</td>
+              <td>{$vo.title}</td>
+              <td>{$vo.status}</td>
+              <td><a href="{:U(__URL__.'/edit/id/'.$vo[id])}">编辑</a>　|　
+                  <a href="{:U(__URL__.'/delete/id/'.$vo[id])}">删除</a></td>
+            </tr>
+            </volist>
 
-      <tr>
-        <td colspan="2">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td colspan="2">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td height="40" colspan="4"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
-          <tr>
-            <td></td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td width="2%">&nbsp;</td>
-        <td width="51%" class="left_txt"><img src="../Public/Images/icon-mail2.gif" width="16" height="11"> 客户服务邮箱：215288671@qq.com<br>
-              <img src="../Public/Images/icon-phone.gif" width="17" height="14"> 官方网站：http://www.865171.cn</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-    </table>
-        
-        
-        
+        </table>
+        <!--content start-->
         
     </td>
     <td background="../Public/Images/mail_rightbg.gif">&nbsp;</td>

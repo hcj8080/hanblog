@@ -24,42 +24,31 @@ body {
   <tr>
     <td valign="middle" background="../Public/Images/mail_leftbg.gif">&nbsp;</td>
     <td valign="top" bgcolor="#F7F8F9">
-        
+        <!--content start-->
         <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
-      <tr>
-        <td colspan="2" valign="top">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td valign="top">&nbsp;</td>
-      </tr>
-
-      <tr>
-        <td colspan="2">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td colspan="2">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td height="40" colspan="4"><table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
-          <tr>
-            <td></td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td width="2%">&nbsp;</td>
-        <td width="51%" class="left_txt"><img src="../Public/Images/icon-mail2.gif" width="16" height="11"> 客户服务邮箱：215288671@qq.com<br>
-              <img src="../Public/Images/icon-phone.gif" width="17" height="14"> 官方网站：http://www.865171.cn</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-    </table>
-        
-        
-        
+            <tr>              
+              <td>分类名称:</td>
+              <td><input type="text" name="title" warning="标题不能为空" check="Require"></td>
+              
+            </tr>
+           <tr>           
+              <td>状态:</td>
+              <td>
+                  <select name="status">
+                    <option value="1">启用</option>
+                    <option value="0">禁用</option>
+                  </select>
+              </td>
+            </tr>
+            <tr>           
+              <td></td>
+              <td>
+                  <input  type="submit" name="submit" value="保存">
+                  <input  type="submit" name="submit" value="取消">
+              </td>
+            </tr>
+        </table>
+        <!--content start-->
         
     </td>
     <td background="../Public/Images/mail_rightbg.gif">&nbsp;</td>

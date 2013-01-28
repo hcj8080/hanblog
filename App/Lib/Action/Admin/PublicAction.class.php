@@ -11,6 +11,8 @@ class PublicAction extends Action{
     public function left(){
         $this->display();
     }
-    
+    public function index(){
+        
+    }
 }
 ?>
