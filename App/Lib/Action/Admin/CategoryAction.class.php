@@ -24,20 +24,21 @@ class CategoryAction extends CommonAction {
     public function edit() {
         $category = M('Category');
         $id = intval($_GET['id']);
-        $vo = $category->find($id);
+        $vo = $category->find($id);        
         $this->assign('vo', $vo);
         $this->display();
     }
 
     public function update() {
+        $id = intval($_POST['id']);
         $category = M('Category');
         if ($vo = $category->create()) {
-            $list = $category->save();
-            dump($list);
+            $list = $category->save($vo);
             if ($list != false) {
-                //$this->success('更新成功',U('Index/index'));
+                $this->assign('jumpUrl', __URL__);
+                $this->success('更新成功');
             } else {
-                //$this->error('没有更新任何数据!');
+                $this->error('没有更新任何数据!');
             }
         } else {
             $this->edit($category->getError());
@@ -45,7 +46,7 @@ class CategoryAction extends CommonAction {
     }
 
     public function insert() {
-        
+        $category = D('Category');
     }
 
 }
