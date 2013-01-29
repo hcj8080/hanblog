@@ -1,13 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>管理页面</title>
-        <script src="../Public/Js/prototype.lite.js" type="text/javascript"></script>
-        <script src="../Public/Js/moo.fx.js" type="text/javascript"></script>
-        <script src="../Public/Js/moo.fx.pack.js" type="text/javascript"></script>
-        <style>
-            body {
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>管理页面</title><script src="../Public/Js/prototype.lite.js" type="text/javascript"></script><script src="../Public/Js/moo.fx.js" type="text/javascript"></script><script src="../Public/Js/moo.fx.pack.js" type="text/javascript"></script><style>            body {
                 font:12px Arial, Helvetica, sans-serif;
                 color: #000;
                 background-color: #EEF2FB;
@@ -134,53 +125,11 @@
                 width: 182px;
                 text-decoration: none;
             }
-        </style>
-    </head>
-
-    <body>
-        <table width="100%" height="280" border="0" cellpadding="0" cellspacing="0" bgcolor="#EEF2FB">
-            <tr>
-                <td width="182" valign="top">
-                    <div id="container">
-                        <h1 class="type"><a href="javascript:void(0)">文章管理</a></h1>
-                        <div class="content">
-                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                <tr>
-                                    <td><img src="../Public/Images/menu_topline.gif" width="182" height="5" /></td>
-                                </tr>
-                            </table>
-                            <ul class="MM">
-                                <li><a href="{:U('Admin/Article/index')}" target="main">文列列表</a></li>
-                                <li><a href="{:U('Admin/Article/add')}" target="main">添加文章</a></li>                                                               
-                            </ul>
-                        </div>
-                        <h1 class="type"><a href="javascript:void(0)">分类管理</a></h1>
-                        <div class="content">
-                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                <tr>
-                                    <td><img src="../Public/Images/menu_topline.gif" width="182" height="5" /></td>
-                                </tr>
-                            </table>
-                            <ul class="MM">
-                                <li><a href="{:U('Admin/Category/index')}" target="main">分类列表</a></li>
-                                <li><a href="{:U('Admin/Category/add')}" target="main">增加分类</a></li>                                
-                                
-                            </ul>
-                        </div>
-                        
-                       
-                    </div>                    
-                    <script type="text/javascript">
-                        var contents = document.getElementsByClassName('content');
+        </style></head><body><table width="100%" height="280" border="0" cellpadding="0" cellspacing="0" bgcolor="#EEF2FB"><tr><td width="182" valign="top"><div id="container"><h1 class="type"><a href="javascript:void(0)">文章管理</a></h1><div class="content"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td><img src="../Public/Images/menu_topline.gif" width="182" height="5" /></td></tr></table><ul class="MM"><li><a href="<?php echo U('Admin/Article/index');?>" target="main">文列列表</a></li><li><a href="<?php echo U('Admin/Article/add');?>" target="main">添加文章</a></li></ul></div><h1 class="type"><a href="javascript:void(0)">分类管理</a></h1><div class="content"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td><img src="../Public/Images/menu_topline.gif" width="182" height="5" /></td></tr></table><ul class="MM"><li><a href="<?php echo U('Admin/Category/index');?>" target="main">分类列表</a></li><li><a href="<?php echo U('Admin/Category/add');?>" target="main">增加分类</a></li></ul></div></div><script type="text/javascript">                        var contents = document.getElementsByClassName('content');
                         var toggles = document.getElementsByClassName('type');
 	
                         var myAccordion = new fx.Accordion(
                         toggles, contents, {opacity: true, duration: 400}
                     );
                         myAccordion.showThisHideOpen(contents[0]);
-                    </script>
-                </td>
-            </tr>
-        </table>
-    </body>
-</html>
+                    </script></td></tr></table></body></html>

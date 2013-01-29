@@ -36,19 +36,20 @@ body {
         <!--content start-->
         <table width="100%" cellpadding="0" cellspacing="0" style="border:solid 1px #CCCCCC;" id="companlists">
               <tr class="left_txt2">
-                <th class="tableTh">ID</th>
-                <th width="30%" class="tableTh">名称</th>
-                <th width="30%" class="tableTh">标题</th>
-                <th class="tableTh">状态</th>
+                <th width="5%"  class="tableTh">ID</th>
+                <th width="30%" class="tableTh">标题</th>                
+                <th width="30%" class="tableTh">时间</th>
+                <th width="5%"  class="tableTh">状态</th>
                 <th width="10%" class="tableTh">操作</th>
               </tr>
             <volist name="list" id="vo">
             <tr>
               <td class="tableTd" align="center">{$vo.id}</td>
-              <td class="tableTd" align="center">{$vo.name}</td>
-              <td class="tableTd" align="center">{$vo.title}</td>
+              <td class="tableTd" align="center">{$vo.title}</td>              
+              <td class="tableTd" align="center">{$vo.create_time}</td>
               <td class="tableTd" align="center">{$vo.status}</td>
-              <td class="tableTd" align="center"><a href="__URL__/edit/id/{$vo[id]}">编辑</a>　|　
+              <td class="tableTd" align="center">
+                  <a href="__URL__/edit/id/{$vo[id]}">编辑</a>|
                   <a href="__URL__/edit/id/{$vo[id]}">删除</a></td>
             </tr>
             </volist>
