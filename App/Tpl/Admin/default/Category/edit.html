@@ -44,8 +44,9 @@ body {
             <tr>           
               <td></td>
               <td>
-                  <input  type="submit" name="submit" value="提交">
-                  <input  type="submit" name="submit" value="取消">
+                  <input type="hidden" name="id" value="{$vo.id}">
+                  <input  type="submit"  value="提交">
+                  <input  type="reset"   value="取消">
               </td>
             </tr>
         </table>
