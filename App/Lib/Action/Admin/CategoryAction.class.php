@@ -41,8 +41,8 @@ class CategoryAction extends CommonAction {
         $id = intval($_POST['id']);
         $category = D('Category');
         if ($vo = $category->create()) {
-            $list = $category->save($vo);
-            if ($list != false) {
+            $list = $category->save();
+            if ($list !== false) {
                 $this->assign('jumpUrl', __URL__);
                 $this->success('更新成功');
             } else {

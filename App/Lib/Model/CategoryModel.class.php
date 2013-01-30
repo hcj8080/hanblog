@@ -9,7 +9,7 @@ class CategoryModel extends Model{
     //自动验证
     protected $_validate = array(
         array('title','require', '标题必须！'),
-        array('title', '', '标题已经存在', 0, 'unique', self::MODEL_INSERT),        
+        array('title', '', '标题已经存在', 0, 'unique', self::MODEL_BOTH),        
     );
 }
 ?>
