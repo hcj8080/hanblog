@@ -6,9 +6,17 @@
  */
 class ArticleAction extends CommonAction{
     public function index(){
+        import("ORG.Util.Page");        
         $article=M('Article');
-        $vo = $article->select();
-        $this->assign('list',$vo);
+        $count = $article->count();
+        $Page = new Page($count,5);
+        $list = $article->limit($Page->firstRow.','.$Page->listRows)->select();
+        $Page->setConfig(header, '条数据');
+        $Page->setConfig(first, '<<');
+        $Page->setConfig(last, '>>');
+        $page = $Page->show();
+        $this->assign('page',$page);
+        $this->assign('list',$list);
         $this->display();
     }
     public function add(){
