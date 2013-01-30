@@ -23,19 +23,19 @@ class ArticleAction extends CommonAction {
     }
 
     public function add() {
-        
+        $this->display();
     }
 
     public function edit() {
-        
+        $this->display();
     }
 
     public function insert() {
-        
+        $this->display();
     }
 
     public function update() {
-        
+        $this->display();
     }
 
 }
