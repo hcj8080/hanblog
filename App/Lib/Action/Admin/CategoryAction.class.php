@@ -30,7 +30,7 @@ class CategoryAction extends CommonAction {
     }
 
     public function edit() {
-        $category = M('Category');
+        $category = D('Category');
         $id = intval($_GET['id']);
         $vo = $category->find($id);
         $this->assign('vo', $vo);
