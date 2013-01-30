@@ -24,7 +24,7 @@ class CategoryAction extends CommonAction {
     public function edit() {
         $category = M('Category');
         $id = intval($_GET['id']);
-        $vo = $category->find($id);        
+        $vo = $category->find($id);
         $this->assign('vo', $vo);
         $this->display();
     }
@@ -45,18 +45,19 @@ class CategoryAction extends CommonAction {
         }
     }
 
-    public function insert(){
+    public function insert() {
         $category = D('Category');
-        if($vo = $category->create()){
-            if(false!=$category->add()){
+        if ($vo = $category->create()) {
+            if (false != $category->add()) {
                 $this->success('数据添加成功');
-            }  else {
+            } else {
                 $this->error('数据添加失败');
             }
-        }else{
+        } else {
             $this->error($category->getError());
         }
     }
+
 }
 
 ?>
