@@ -11,8 +11,16 @@ class CategoryAction extends CommonAction {
 
     //put your code here
     public function index() {
+        import("ORG.Util.Page");
         $category = M('Category');
-        $list = $category->select();
+        $count = $category->count();
+        $Page = new Page($count,5);        
+        $list = $category->limit($Page->firstRow.','.$Page->listRows)->select();
+        $Page->setConfig('header', '条数据');
+        $Page->setConfig('first', '<<');
+        $Page->setConfig('last', '>>');
+        $page = $Page->show();
+        $this->assign("page", $page);
         $this->assign('list', $list);
         $this->display();
     }
