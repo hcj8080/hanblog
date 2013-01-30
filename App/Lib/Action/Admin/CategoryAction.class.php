@@ -31,7 +31,7 @@ class CategoryAction extends CommonAction {
 
     public function update() {
         $id = intval($_POST['id']);
-        $category = M('Category');
+        $category = D('Category');
         if ($vo = $category->create()) {
             $list = $category->save($vo);
             if ($list != false) {
@@ -45,10 +45,18 @@ class CategoryAction extends CommonAction {
         }
     }
 
-    public function insert() {
+    public function insert(){
         $category = D('Category');
+        if($vo = $category->create()){
+            if(false!=$category->add()){
+                $this->success('数据添加成功');
+            }  else {
+                $this->error('数据添加失败');
+            }
+        }else{
+            $this->error($category->getError());
+        }
     }
-
 }
 
 ?>
