@@ -10,6 +10,16 @@ body {
 }
 -->
 </style>
+<script charset="utf-8" src="__ROOT__/Public/Js/kindeditor-4.1.5/kindeditor-min.js"></script>
+<script charset="utf-8" src="__ROOT__/Public/Js/kindeditor-4.1.5/lang/zh_CN.js"></script>
+<script>
+			var editor;
+			KindEditor.ready(function(K) {
+				editor = K.create('textarea[name="content"]', {
+					allowFileManager : true
+				});				
+			});
+</script>
 <body>
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
@@ -25,23 +35,35 @@ body {
     <td valign="middle" background="../Public/Images/mail_leftbg.gif">&nbsp;</td>
     <td valign="top" bgcolor="#F7F8F9">
         <!--content start-->
-        <form method="post" action="__URL__/update">
+        <form method="post" action="__URL__/insert">
         <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
             <tr>              
-              <td align="right">分类名称:</td>
-              <td><input type="text" name="title" value="{$vo.title}"></td>
+              <td align="right" style="font-size: 12px" size="30">文章标题:</td>
+              <td><input type="text" name="title" ></td>
               
             </tr>
            <tr>           
-            <td align="right">分类别名:</td>
-              <td><input type="text" name="name" value="{$vo.name}"></td>
+              <td align="right" style="font-size: 12px">分类名称:</td>
+              <td><select name="title">
+                      <volist name="list" id="vo">
+                      <option value="{$vo.id}">{$vo.title}</option>
+                      </volist>
+                  </select>
+              </td>
+            </tr>
+            <tr>           
+              <td align="right" style="font-size: 12px">内容:</td>
+              <td><textarea name="content" style="width:670px;height:300px;visibility:hidden;"></textarea></td>
+            </tr>
+            <tr>           
+              <td align="right" style="font-size: 12px">文章标签:</td>
+              <td><input type="text" name="tag" size="50"></td>
             </tr>
             <tr>           
               <td></td>
               <td>
-                  <input type="hidden" name="id" value="{$vo.id}">
-                  <input  type="submit"  value="提交">
-                  <input  type="reset"   value="取消">
+                  <input  type="submit" name="submit" value="保存">
+                  <input  type="reset" name="submit" value="取消">
               </td>
             </tr>
         </table>

@@ -23,6 +23,9 @@ class ArticleAction extends CommonAction {
     }
 
     public function add() {
+        $category = M('Category');
+        $list = $category->field('id','title')->select();
+        $this->assign('list',$list);
         $this->display();
     }
 
