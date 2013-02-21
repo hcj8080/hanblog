@@ -47,7 +47,7 @@ body {
             <tr>
               <td class="tableTd" align="center">{$vo.id}</td>
               <td class="tableTd" align="center">{$vo.title}</td>              
-              <td class="tableTd" align="center">{$vo.create_time|date='Y-m-d H:i:s',###}</td>
+              <td class="tableTd" align="center">{$vo.cTime|date='Y-m-d H:i:s',###}</td>
               <td class="tableTd" align="center">{$vo.status}</td>
               <td class="tableTd" align="center">
                   <a href="__URL__/edit/id/{$vo[id]}">编辑</a>|

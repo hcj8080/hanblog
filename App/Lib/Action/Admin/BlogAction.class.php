@@ -5,14 +5,14 @@
  * and open the template in the editor.
  */
 
-class ArticleAction extends CommonAction {
+class BlogAction extends CommonAction {
 
     public function index() {
         import("ORG.Util.Page");
-        $article = M('Article');
-        $count = $article->count();
+        $blog = M('Blog');
+        $count = $blog->count();
         $Page = new Page($count, 5);
-        $list = $article->limit($Page->firstRow . ',' . $Page->listRows)->select();
+        $list = $blog->limit($Page->firstRow . ',' . $Page->listRows)->select();
         $Page->setConfig(header, '条数据');
         $Page->setConfig(first, '<<');
         $Page->setConfig(last, '>>');
