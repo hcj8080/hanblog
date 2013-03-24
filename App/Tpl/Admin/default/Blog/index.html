@@ -51,7 +51,7 @@ body {
               <td class="tableTd" align="center">{$vo.status}</td>
               <td class="tableTd" align="center">
                   <a href="__URL__/edit/id/{$vo[id]}">编辑</a>|
-                  <a href="__URL__/edit/id/{$vo[id]}">删除</a></td>
+                  <a onclick="return confirm('确定要删除吗？')"  href="__URL__/edit/id/{$vo[id]}">删除</a></td>
             </tr>
             </volist>
               <tr><td colspan="5" align="right">{$page}</td></tr>
